@@ -1,4 +1,5 @@
-{% set version = "0.0.8" %}
+{% set version = "0.0.9" %}
+{% set sha256 = "foo" %}
 
 package:
     name: scikit-beam
@@ -7,17 +8,14 @@ package:
 source:
     url: https://github.com/scikit-beam/scikit-beam/archive/v{{ version }}.tar.gz
     fn: scikit-beam-v{{ version }}.tar.gz
-    sha256: 084690482e418defbe36bb0969133d8de22d21b4a06e09c62ccb6b1717d2e2b4
+    sha256: {{ sha_256 }} 
 
 build:
   number: 0
   script:
     - python setup.py build_ext -i
     - python setup.py install --single-version-externally-managed --record=record.txt
-  # v0.0.8 of scikit-beam is not windows compatible because the setup.py is not formatted correctly
-  # to build the extensions that have some linux-specific include directives. Once there is a 0.0.9 tag,
-  # we can remove thsi next line and be good to go
-  skip: True  # [win]
+  skip: True
 
 requirements:
     build:
@@ -60,6 +58,9 @@ about:
     home: http://scikit-beam.github.io/scikit-beam/
     license: BSD 3-Clause
     summary: Data analysis algorithms for X-Ray, Neutron and Electron sciences
+    # Need to add LICENSE to the manifest
+    # license_file: LICENSE
+    license_family: BSD
 
 extra:
     recipe-maintainers:
