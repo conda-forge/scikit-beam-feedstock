@@ -52,8 +52,9 @@ test:
     commands:
         # Don't need to specify path due to the CONDA_DEFAULT_ENV env var being set inside of conda-build
         # which is pointing to the test environment
-        - conda inspect linkages scikit-beam  # [not win]
-        - conda inspect objects scikit-beam  # [osx]
+        # These next two lines are currently failing due to an API change from conda-build 1.21.* -> 2.0.*
+        #- conda inspect linkages scikit-beam  # [not win]
+        #- conda inspect objects scikit-beam  # [osx]
 
 about:
     home: http://scikit-beam.github.io/scikit-beam/
