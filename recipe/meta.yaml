@@ -1,4 +1,4 @@
-{% set version = "0.0.8" %}
+{% set version = "0.0.9" %}
 
 package:
     name: scikit-beam
@@ -7,7 +7,7 @@ package:
 source:
     url: https://github.com/scikit-beam/scikit-beam/archive/v{{ version }}.tar.gz
     fn: scikit-beam-v{{ version }}.tar.gz
-    sha256: 084690482e418defbe36bb0969133d8de22d21b4a06e09c62ccb6b1717d2e2b4
+    sha256: 2c149ccd25a1609b0cf1c1518b87b27b7e00ca4f60d502763f0222e4a80bd361
 
 build:
   number: 0
