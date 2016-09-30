@@ -1,4 +1,5 @@
-{% set version = "0.0.8" %}
+{% set version = "0.0.9" %}
+{% set sha256 = "2737ed64111586ac32f3275d5e416beb603fafb1d1eb664fc1060de0d0c37200" %}
 
 package:
     name: scikit-beam
@@ -7,17 +8,13 @@ package:
 source:
     url: https://github.com/scikit-beam/scikit-beam/archive/v{{ version }}.tar.gz
     fn: scikit-beam-v{{ version }}.tar.gz
-    sha256: 084690482e418defbe36bb0969133d8de22d21b4a06e09c62ccb6b1717d2e2b4
+    sha256: {{ sha256 }} 
 
 build:
   number: 0
   script:
     - python setup.py build_ext -i
     - python setup.py install --single-version-externally-managed --record=record.txt
-  # v0.0.8 of scikit-beam is not windows compatible because the setup.py is not formatted correctly
-  # to build the extensions that have some linux-specific include directives. Once there is a 0.0.9 tag,
-  # we can remove thsi next line and be good to go
-  skip: True  # [win]
 
 requirements:
     build:
@@ -53,13 +50,19 @@ test:
         # has linux native library imports  # [not win]
         - skbeam.ext.ctrans    # [not win]
     commands:
-        - conda inspect linkages -n _test scikit-beam  # [not win]
-        - conda inspect objects -n _test scikit-beam  # [osx]
+        # Don't need to specify path due to the CONDA_DEFAULT_ENV env var being set inside of conda-build
+        # which is pointing to the test environment
+        # These next two lines are currently failing due to an API change from conda-build 1.21.* -> 2.0.*
+        #- conda inspect linkages scikit-beam  # [not win]
+        #- conda inspect objects scikit-beam  # [osx]
 
 about:
     home: http://scikit-beam.github.io/scikit-beam/
     license: BSD 3-Clause
     summary: Data analysis algorithms for X-Ray, Neutron and Electron sciences
+    # Need to add LICENSE to the manifest
+    # license_file: LICENSE
+    license_family: BSD
 
 extra:
     recipe-maintainers:
