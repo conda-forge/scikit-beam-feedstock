@@ -1,5 +1,5 @@
-{% set version = "0.0.9" %}
-{% set sha256 = "2c149ccd25a1609b0cf1c1518b87b27b7e00ca4f60d502763f0222e4a80bd361" %}
+{% set version = "0.0.10" %}
+{% set sha256 = "33c9abd37ef5318de816c48eaa737d7140ea057807216e74ff40ee0cb831e017" %}
 
 package:
     name: scikit-beam
@@ -53,8 +53,8 @@ test:
         # Don't need to specify path due to the CONDA_DEFAULT_ENV env var being set inside of conda-build
         # which is pointing to the test environment
         # These next two lines are currently failing due to an API change from conda-build 1.21.* -> 2.0.*
-        #- conda inspect linkages scikit-beam  # [not win]
-        #- conda inspect objects scikit-beam  # [osx]
+        - conda inspect linkages scikit-beam  # [not win]
+        - conda inspect objects scikit-beam  # [osx]
 
 about:
     home: http://scikit-beam.github.io/scikit-beam/
