@@ -1,5 +1,5 @@
-{% set version = "0.0.9" %}
-{% set sha256 = "2c149ccd25a1609b0cf1c1518b87b27b7e00ca4f60d502763f0222e4a80bd361" %}
+{% set version = "0.0.10" %}
+{% set sha256 = "b5a535aab3e3ea182dd725c8d147311d42e821e33ee92019f8c4e769874078cc" %}
 
 package:
     name: scikit-beam
@@ -69,3 +69,4 @@ extra:
         - ericdill
         - licode
         - tacaswell
+        - CJ-Wright
