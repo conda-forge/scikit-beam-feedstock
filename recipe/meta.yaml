@@ -1,5 +1,5 @@
-{% set version = "0.0.10" %}
-{% set sha256 = "b5a535aab3e3ea182dd725c8d147311d42e821e33ee92019f8c4e769874078cc" %}
+{% set version = "0.0.12" %}
+{% set sha256 = "0efcd6817d8eba81f0411ff7d9f9801b2977d8a07f462caa3471439ff12509ac" %}
 
 package:
     name: scikit-beam
@@ -8,7 +8,7 @@ package:
 source:
     url: https://github.com/scikit-beam/scikit-beam/archive/v{{ version }}.tar.gz
     fn: scikit-beam-v{{ version }}.tar.gz
-    sha256: {{ sha256 }} 
+    sha256: {{ sha256 }}
 
 build:
   number: 0
@@ -30,7 +30,7 @@ requirements:
         - numpy x.x
         - scipy
         - six
-        - xraylib    # [not win]
+        - xraylib
         - scikit-image
         - lmfit 0.8.3
 
@@ -44,9 +44,8 @@ test:
         - skbeam.core.fitting
         - skbeam.core.fitting.base
         - skbeam.ext
-        # xraylib is not conda installable on windows yet  # [not win]
-        - skbeam.core.fitting    # [not win]
-        - skbeam.core.constants.xrf    # [not win]
+        - skbeam.core.fitting
+        - skbeam.core.constants.xrf
         # has linux native library imports  # [not win]
         - skbeam.ext.ctrans    # [not win]
     commands:
