@@ -21,13 +21,13 @@ requirements:
         - toolchain
         - python
         - setuptools
-        - numpy 1.13.*
+        - numpy 1.11.*
         - six
         - cython
         - autoconf    # [osx]
     run:
         - python
-        - numpy >=1.13
+        - numpy >=1.11
         - scipy
         - six
         - xraylib
