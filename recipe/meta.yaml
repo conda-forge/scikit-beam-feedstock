@@ -15,7 +15,6 @@ build:
   script:
     - python setup.py build_ext -i
     - python setup.py install --single-version-externally-managed --record=record.txt
-  skip: True  # [win or osx] 
 
 requirements:
     build:
