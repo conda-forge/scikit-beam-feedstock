@@ -1,5 +1,5 @@
 {% set version = "0.0.13" %}
-{% set sha256 = "f6efd434c4b0aa0ccf0156286197d9f26287418c49ea40ab3a73e4c7eb1af545" %}
+{% set sha256 = "031495b8f725eb1cc09086c7bb8d19e281d1a7431908d645360cf5fe974f3c34" %}
 
 package:
     name: scikit-beam
