@@ -11,23 +11,24 @@ source:
     sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script:
     - python setup.py build_ext -i
     - python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
     build:
-        - toolchain
+        - autoconf    # [osx]
+        - {{ compiler('c') }}
+    host:
         - python
         - setuptools
-        - numpy 1.11.*
+        - numpy
         - six
         - cython
-        - autoconf    # [osx]
     run:
         - python
-        - numpy >=1.11
+        - {{ pin_compatible('numpy') }}
         - scipy
         - six
         - xraylib
