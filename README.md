@@ -14,14 +14,16 @@ Summary: Data analysis algorithms for X-Ray, Neutron and Electron sciences
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/scikit-beam-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/scikit-beam-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/scikit-beam-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/scikit-beam-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/scikit-beam-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/scikit-beam-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/scikit-beam-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/scikit-beam-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/scikit-beam-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/scikit-beam-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/scikit-beam-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/scikit-beam-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/scikit-beam/badges/version.svg)](https://anaconda.org/conda-forge/scikit-beam)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/scikit-beam/badges/downloads.svg)](https://anaconda.org/conda-forge/scikit-beam)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-scikit--beam-green.svg)](https://anaconda.org/conda-forge/scikit-beam) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/scikit-beam.svg)](https://anaconda.org/conda-forge/scikit-beam) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/scikit-beam.svg)](https://anaconda.org/conda-forge/scikit-beam) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/scikit-beam.svg)](https://anaconda.org/conda-forge/scikit-beam) |
 
 Installing scikit-beam
 ======================
