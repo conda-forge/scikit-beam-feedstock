@@ -1,5 +1,5 @@
-{% set version = "0.0.13" %}
-{% set sha256 = "031495b8f725eb1cc09086c7bb8d19e281d1a7431908d645360cf5fe974f3c34" %}
+{% set version = "0.0.14" %}
+{% set sha256 = "5c04d850c43a88decb847a2aabbe97ce323cdc966263952764fafc8028e0db2b" %}
 
 package:
     name: scikit-beam
@@ -11,7 +11,7 @@ source:
     sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script:
     - python setup.py build_ext -i
     - python setup.py install --single-version-externally-managed --record=record.txt
