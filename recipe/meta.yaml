@@ -9,9 +9,14 @@ source:
     url: https://github.com/scikit-beam/scikit-beam/archive/v{{ version }}.tar.gz
     fn: scikit-beam-v{{ version }}.tar.gz
     sha256: {{ sha256 }}
+    patches:
+        # REMOVE THIS FOR 0.0.15
+        - setup.py.patch
 
 build:
   number: 0
+  # There are some py37 incompatibilities somewhere that need to be tracked down
+  skip: true  # [py>36]
   script:
     - python setup.py build_ext -i
     - python setup.py install --single-version-externally-managed --record=record.txt
@@ -33,7 +38,7 @@ requirements:
         - six
         - xraylib
         - scikit-image
-        - lmfit 0.8.3
+        - lmfit =0.8.3
 
 test:
     imports:
