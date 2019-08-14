@@ -10,14 +10,14 @@ source:
     fn: scikit-beam-v{{ version }}.tar.gz
     sha256: {{ sha256 }}
     patches:
-        # REMOVE THIS FOR 0.0.15
+        # REMOVE THIS AFTER 0.0.15
         - setup.py.patch
         - include_license.patch
 
 build:
-  number: 0
+  number: 1
   # There are some py37 incompatibilities somewhere that need to be tracked down
-  skip: true  # [py>36]
+  skip: true  # [py2k]
   script:
     - python setup.py build_ext -i
     - python setup.py install --single-version-externally-managed --record=record.txt
