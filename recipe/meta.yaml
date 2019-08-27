@@ -1,13 +1,13 @@
-{% set version = "0.0.15" %}
-{% set sha256 = "5f5b29427808567212080bc725b98e6698acfad2bec7b7bf82c6fe3681b5b2f0" %}
+{% set name = "scikit-beam" %}
+{% set version = "0.0.17" %}
+{% set sha256 = "2c59dab3b6058e6e61df5d5fd95b49518ee196c9b572f2885b6fbf8eec58cb42" %}
 
 package:
-  name: scikit-beam
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/scikit-beam/scikit-beam/archive/v{{ version }}.tar.gz
-  fn: scikit-beam-v{{ version }}.tar.gz
+  url: https://github.com/{{ name }}/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -15,8 +15,8 @@ build:
   # There are some py37 incompatibilities somewhere that need to be tracked down
   skip: true  # [py>36]
   script:
-  - python setup.py build_ext -i
-  - python setup.py install --single-version-externally-managed --record=record.txt
+    - python setup.py build_ext -i
+    - python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
   build:
@@ -24,18 +24,18 @@ requirements:
     - {{ compiler('c') }}
   host:
     - python
-    - setuptools
-    - numpy
-    - six
     - cython
+    - numpy
+    - setuptools
+    - six
   run:
     - python
-    - {{ pin_compatible('numpy') }}
+    - lmfit >=0.8.3
+    - scikit-image
     - scipy
     - six
     - xraylib
-    - scikit-image
-    - lmfit >=0.8.3
+    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
