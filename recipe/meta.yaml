@@ -12,8 +12,7 @@ source:
 
 build:
   number: 0
-  # There are some py37 incompatibilities somewhere that need to be tracked down
-  skip: true  # [py>36]
+  skip: true  # [py<36]
   script:
     - python setup.py build_ext -i
     - python setup.py install --single-version-externally-managed --record=record.txt
@@ -51,15 +50,9 @@ test:
     - skbeam.core.constants.xrf
     # has linux native library imports  # [not win]
     - skbeam.ext.ctrans  # [not win]
-  commands:
-    # Don't need to specify path due to the CONDA_DEFAULT_ENV env var being set inside of conda-build
-    # which is pointing to the test environment
-    # These next two lines are currently failing due to an API change from conda-build 1.21.* -> 2.0.*
-    #- conda inspect linkages scikit-beam  # [not win]
-    #- conda inspect objects scikit-beam  # [osx]
 
 about:
-  home: http://scikit-beam.github.io/scikit-beam/
+  home: http://scikit-beam.github.io/scikit-beam
   license: BSD 3-Clause
   summary: Data analysis algorithms for X-Ray, Neutron and Electron sciences
   license_file: LICENSE
