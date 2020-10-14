@@ -3,13 +3,11 @@ About scikit-beam
 
 Home: http://scikit-beam.github.io/scikit-beam
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/scikit-beam-feedstock/blob/master/LICENSE.txt)
 
 Summary: Data analysis algorithms for X-Ray, Neutron and Electron sciences
-
-
 
 Current build status
 ====================
