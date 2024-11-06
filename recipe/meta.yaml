@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   skip: true  # [py<36]
   script:
     - python setup.py build_ext -i
@@ -25,6 +25,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - autoconf  # [osx]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - cython
@@ -38,7 +39,6 @@ requirements:
     - scipy
     - six
     - xraylib
-    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
