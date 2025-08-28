@@ -1,17 +1,17 @@
 {% set name = "scikit-beam" %}
-{% set version = "0.0.26" %}
-{% set sha256 = "4852b9c641a392d37bdca43353925a3cb7465f03017038238e3fc08238b70c64" %}
+{% set version = "0.0.27" %}
+{% set sha256 = "bd190ee689d7e2d53bde108c3e455b10498c15e3d793ce47434d3a05dbbd9dd6" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py<36]
   script:
     - python setup.py build_ext -i
@@ -25,6 +25,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - autoconf  # [osx]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - cython
