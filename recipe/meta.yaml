@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<36]
   script:
     - python setup.py build_ext -i
@@ -39,7 +39,6 @@ requirements:
     - scipy
     - six
     - xraylib
-    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
